@@ -25,8 +25,8 @@
         ],
     },
     'images': [
-        'static/description/icon.png',
         'static/description/banner.png',
+        'static/description/icon.png',
         'static/description/overview.png',
         'static/description/ui_sales_order_flow.png',
         'static/description/ui_purchase_order_flow.png',
