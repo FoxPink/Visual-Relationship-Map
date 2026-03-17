@@ -6,20 +6,20 @@
   <title>Visual Relationship Map</title>
   <style>
     :root{--vrm-purple:#714B67;--vrm-text:#0f172a;--vrm-muted:#475569;--vrm-border:#e2e8f0;--vrm-bg:#ffffff;--vrm-bg2:#f8fafc}
-    .vrm-wrap * {box-sizing: border-box !important;}
-    .vrm-wrap{margin:0 auto !important; padding:0 !important; color:var(--vrm-text) !important; font-family:Segoe UI,Arial,Helvetica,sans-serif !important; overflow: hidden !important; background-color:var(--vrm-bg) !important;}
-    .vrm-section{margin:0 !important; padding:0 !important; background-color:var(--vrm-bg) !important;}
+    .vrm-wrap, .vrm-wrap * {box-sizing: border-box !important;}
+    .vrm-wrap{margin:0 !important; padding:0 !important; color:var(--vrm-text) !important; font-family:Segoe UI,Arial,Helvetica,sans-serif !important; overflow: hidden !important; background-color:var(--vrm-bg) !important; width: 100% !important; max-width: 100% !important; display: block !important;}
+    .vrm-section{margin:0 !important; padding:0 !important; background-color:var(--vrm-bg) !important; width: 100% !important; max-width: 100% !important; display: block !important;}
     .vrm-section.bg{background-color:var(--vrm-bg2) !important;}
-    .vrm-title{margin:0 !important; padding:24px 24px 12px 24px !important; font-size:24px !important; font-weight:700 !important; color:var(--vrm-purple) !important; line-height: 1.2 !important;}
-    .vrm-subtitle{margin:0 !important; padding:0 24px 18px 24px !important; color:var(--vrm-muted) !important; font-size:14px !important; line-height: 1.5 !important;}
-    .vrm-img{display:block !important; max-width:100% !important; height:auto !important; margin:0 auto !important; padding:0 !important; border:0 !important;}
-    .vrm-card{margin:0 !important; padding:0 !important; border-top:1px solid var(--vrm-border) !important; background-color:var(--vrm-bg) !important;}
+    .vrm-title{margin:0 !important; padding:24px 24px 12px 24px !important; font-size:24px !important; font-weight:700 !important; color:var(--vrm-purple) !important; line-height: 1.2 !important; width: 100% !important; max-width: 100% !important; display: block !important;}
+    .vrm-subtitle{margin:0 !important; padding:0 24px 18px 24px !important; color:var(--vrm-muted) !important; font-size:14px !important; line-height: 1.5 !important; width: 100% !important; max-width: 100% !important; display: block !important;}
+    .vrm-img{display:block !important; width: 100% !important; max-width:100% !important; height:auto !important; margin:0 auto !important; padding:0 !important; border:0 !important;}
+    .vrm-card{margin:0 !important; padding:0 !important; border-top:1px solid var(--vrm-border) !important; background-color:var(--vrm-bg) !important; width: 100% !important; max-width: 100% !important; display: block !important;}
     .vrm-card:last-child{border-bottom:1px solid var(--vrm-border) !important}
-    .vrm-caption{margin:0 !important; padding:14px 24px 18px 24px !important;}
+    .vrm-caption{margin:0 !important; padding:14px 24px 18px 24px !important; width: 100% !important; max-width: 100% !important; display: block !important;}
     .vrm-caption h3{margin:0 !important; padding:0 !important; font-size:16px !important; font-weight:700 !important; color:var(--vrm-text) !important;}
     .vrm-caption p{margin:6px 0 0 0 !important; padding:0 !important; color:var(--vrm-muted) !important; font-size:13px !important;}
-    .vrm-list{margin:0 !important; padding:0 24px 22px 40px !important; color:var(--vrm-muted) !important; font-size:13px !important;}
-    .vrm-foot{margin:0 !important; padding:18px 24px !important; text-align:center !important; color:var(--vrm-muted) !important; font-size:12px !important; background-color:var(--vrm-bg) !important; border-top:1px solid var(--vrm-border) !important;}
+    .vrm-list{margin:0 !important; padding:0 24px 22px 40px !important; color:var(--vrm-muted) !important; font-size:13px !important; width: 100% !important; max-width: 100% !important; display: block !important;}
+    .vrm-foot{margin:0 !important; padding:18px 24px !important; text-align:center !important; color:var(--vrm-muted) !important; font-size:12px !important; background-color:var(--vrm-bg) !important; border-top:1px solid var(--vrm-border) !important; width: 100% !important; max-width: 100% !important; display: block !important;}
     code{background-color:#eef2ff !important; color:#3730a3 !important; padding:2px 6px !important; border-radius:6px !important;}
   </style>
 </head>
