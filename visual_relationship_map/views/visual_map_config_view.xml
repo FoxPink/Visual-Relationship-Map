@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_visual_map_config_form" model="ir.ui.view">
+        <field name="name">visual.relationship.map.config.form</field>
+        <field name="model">visual.relationship.map.config</field>
+        <field name="arch" type="xml">
+            <form string="Visual Relationship Map Settings">
+                <sheet>
+                    <group>
+                        <field name="vrm_max_depth"/>
+                        <field name="vrm_origin_regex"/>
+                    </group>
+                    <footer>
+                        <button name="action_save" type="object" class="btn-primary" string="Save"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_visual_map_config" model="ir.actions.act_window">
+        <field name="name">Visual Relationship Map</field>
+        <field name="res_model">visual.relationship.map.config</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_visual_map_root" name="Visual Relationship Map" sequence="90" groups="base.group_system,base.group_erp_manager"/>
+    <menuitem id="menu_visual_map_config" name="Settings" parent="menu_visual_map_root" action="action_visual_map_config" sequence="1" groups="base.group_system,base.group_erp_manager"/>
+</odoo>

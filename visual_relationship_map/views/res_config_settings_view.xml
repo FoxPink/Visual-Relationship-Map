@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_config_settings_visual_map" model="ir.ui.view">
+        <field name="name">res.config.settings.visual.map</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/*[1]" position="before">
+                <div class="app_settings_block" string="Visual Relationship Map" data-key="visual_relationship_map" groups="base.group_system,base.group_erp_manager">
+                    <h2>Visual Relationship Map</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <span class="fa fa-sitemap"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="vrm_max_depth" string="Max recursion depth"/>
+                                <div class="text-muted">Limit how many levels to traverse when building the map.</div>
+                                <div>
+                                    <field name="vrm_max_depth"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <span class="fa fa-code"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="vrm_origin_regex" string="Origin regex pattern"/>
+                                <div class="text-muted">Customize how document codes are extracted from origin.</div>
+                                <div>
+                                    <field name="vrm_origin_regex"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Sale Order -->
+    <record id="view_order_form_inherit_visual_map" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.visual.map</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(visual_relationship_map.action_visual_map)d" 
+                        string="View Map" 
+                        type="action" 
+                        class="btn-secondary"
+                        icon="fa-sitemap"
+                        context="{'active_model': 'sale.order', 'active_id': id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Purchase Order -->
+    <record id="purchase_order_form_inherit_visual_map" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.visual.map</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(visual_relationship_map.action_visual_map)d" 
+                        string="View Map" 
+                        type="action" 
+                        class="btn-secondary"
+                        icon="fa-sitemap"
+                        context="{'active_model': 'purchase.order', 'active_id': id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Stock Picking -->
+    <record id="view_picking_form_inherit_visual_map" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.visual.map</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(visual_relationship_map.action_visual_map)d" 
+                        string="View Map" 
+                        type="action" 
+                        class="btn-secondary"
+                        icon="fa-sitemap"
+                        context="{'active_model': 'stock.picking', 'active_id': id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Account Move (Invoices) -->
+    <record id="view_move_form_inherit_visual_map" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.visual.map</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(visual_relationship_map.action_visual_map)d" 
+                        string="View Map" 
+                        type="action" 
+                        class="btn-secondary"
+                        icon="fa-sitemap"
+                        context="{'active_model': 'account.move', 'active_id': id}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

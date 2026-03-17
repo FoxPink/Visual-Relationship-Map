@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="visual_relationship_map.MapDialog">
+        <div class="o_visual_map_body flex-grow-1 p-3 d-flex flex-column">
+            <div t-if="data.serverError" class="alert alert-danger">
+                Server Error: <t t-esc="data.serverError"/>
+            </div>
+            <div class="vrm-toolbar" role="toolbar" aria-label="Map controls">
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="zoomOut">−</button>
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="resetView">Reset</button>
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="zoomIn">+</button>
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="fitToView">Fit</button>
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="exportPNG">PNG</button>
+                <button type="button" class="btn btn-secondary btn-sm" t-on-click="exportSVG">SVG</button>
+            </div>
+            <div class="mermaid-container">
+                <div t-ref="mermaid_container" class="vrm-stage">
+                    Loading diagram...
+                </div>
+                <div t-if="ui.tooltipVisible"
+                     class="vrm-tooltip"
+                     t-att-style="'left:' + ui.tooltipX + 'px; top:' + ui.tooltipY + 'px;'">
+                    <t t-esc="ui.tooltipText"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

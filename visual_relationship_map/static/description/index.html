@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visual Relationship Map</title>
+  <style>
+    :root{--vrm-purple:#714B67;--vrm-text:#0f172a;--vrm-muted:#475569;--vrm-border:#e2e8f0;--vrm-bg:#ffffff;--vrm-bg2:#f8fafc}
+    html,body{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;background-color:var(--vrm-bg)!important;color:var(--vrm-text)!important;font-family:Segoe UI,Arial,Helvetica,sans-serif!important}
+    .oe_container,.container,.row{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+    .vrm-wrap{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+    .vrm-section{width:100%!important;margin:0!important;padding:0!important;background-color:var(--vrm-bg)!important}
+    .vrm-section.bg{background-color:var(--vrm-bg2)!important}
+    .vrm-title{width:100%!important;margin:0!important;padding:24px 24px 12px 24px!important;font-size:24px!important;font-weight:700!important;color:var(--vrm-purple)!important;box-sizing:border-box!important}
+    .vrm-subtitle{width:100%!important;margin:0!important;padding:0 24px 18px 24px!important;color:var(--vrm-muted)!important;font-size:14px!important;box-sizing:border-box!important}
+    .vrm-img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;margin:0!important;padding:0!important;border:0!important}
+    .vrm-card{width:100%!important;margin:0!important;padding:0!important;border-top:1px solid var(--vrm-border)!important;background-color:var(--vrm-bg)!important}
+    .vrm-card:last-child{border-bottom:1px solid var(--vrm-border)!important}
+    .vrm-caption{width:100%!important;margin:0!important;padding:14px 24px 18px 24px!important;box-sizing:border-box!important}
+    .vrm-caption h3{margin:0!important;padding:0!important;font-size:16px!important;font-weight:700!important;color:var(--vrm-text)!important}
+    .vrm-caption p{margin:6px 0 0 0!important;padding:0!important;color:var(--vrm-muted)!important;font-size:13px!important}
+    .vrm-list{margin:0!important;padding:0 24px 22px 40px!important;color:var(--vrm-muted)!important;font-size:13px!important;box-sizing:border-box!important}
+    .vrm-foot{width:100%!important;margin:0!important;padding:18px 24px!important;text-align:center!important;color:var(--vrm-muted)!important;font-size:12px!important;background-color:var(--vrm-bg)!important;box-sizing:border-box!important;border-top:1px solid var(--vrm-border)!important}
+    code{background-color:#eef2ff!important;color:#3730a3!important;padding:2px 6px!important;border-radius:6px!important}
+  </style>
+</head>
+<body>
+  <div class="vrm-wrap">
+    <section class="vrm-section">
+      <h1 class="vrm-title">Visual Relationship Map</h1>
+      <p class="vrm-subtitle">Visual relationship map – Zoom/Pan, Tooltip, Export PNG/SVG, stable display order.</p>
+      <img class="vrm-img" src="banner.png" alt="Banner" />
+    </section>
+
+    <section class="vrm-section bg">
+      <h2 class="vrm-title">Key Features</h2>
+      <ul class="vrm-list">
+        <li>Displays maps for Sales, Purchase, Picking, and Invoice.</li>
+        <li>Stable node order: Sale → Purchase → Picking → Invoice.</li>
+        <li>Zoom, Pan, Fit; shortcuts: Esc, F, +, −.</li>
+        <li>Interactive tooltips; color-coded status badges.</li>
+        <li>Export PNG/SVG with preserved styles (inline CSS to avoid canvas errors).</li>
+        <li>Smart Upstream using Regex <code>[A-Z0-9/_-]+</code>, linking Invoice → SO/PO via invoice lines.</li>
+      </ul>
+    </section>
+
+    <section class="vrm-section">
+      <h2 class="vrm-title">Screenshots</h2>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="overview.png" alt="Overview" />
+        <div class="vrm-caption">
+          <h3>Overview</h3>
+          <p>Visual map illustrating document relationships.</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_sales_order_flow.png" alt="Sales Order Flow" />
+        <div class="vrm-caption">
+          <h3>Sales Order</h3>
+          <p>SO → Picking, SO → Invoice.</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_purchase_order_flow.png" alt="Purchase Order Flow" />
+        <div class="vrm-caption">
+          <h3>Purchase Order</h3>
+          <p>PO → Receipt, PO → Vendor Bill.</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_picking_flow.png" alt="Picking Flow" />
+        <div class="vrm-caption">
+          <h3>Picking / Backorder</h3>
+          <p>Parent – child backorders.</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_invoice_flow.png" alt="Invoice Flow" />
+        <div class="vrm-caption">
+          <h3>Invoice / Credit Note</h3>
+          <p>Invoice ↔ Credit Note (reversal).</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_tooltip_zoom.png" alt="Tooltip and Zoom" />
+        <div class="vrm-caption">
+          <h3>Tooltip & Zoom/Pan</h3>
+          <p>Clean tooltips, smooth zoom/pan.</p>
+        </div>
+      </div>
+
+      <div class="vrm-card">
+        <img class="vrm-img" src="ui_settings.png" alt="Settings" />
+        <div class="vrm-caption">
+          <h3>Settings</h3>
+          <p>Max depth, Origin regex.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="vrm-foot">© Visual Relationship Map</div>
+  </div>
+</body>
+</html>

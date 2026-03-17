@@ -1,0 +1,148 @@
+/* Part of FoxPink. See LICENSE file for full copyright and licensing details. */
+
+.mermaid-container svg {
+    max-width: none !important;
+    height: auto !important;
+}
+
+.o_visual_map_body {
+    height: 70vh;
+    width: 100%;
+    position: relative;
+}
+
+.mermaid-container {
+    flex: 1 1 auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    min-height: 0;
+}
+
+.vrm-tooltip {
+    position: fixed;
+    z-index: 20000;
+    max-width: 280px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.96);
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.25;
+    white-space: pre-line;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+}
+
+.vrm-toolbar {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.vrm-stage {
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.vrm-stage.is-grabbing {
+    cursor: grabbing;
+}
+
+.node rect {
+    rx: 8px;
+    ry: 8px;
+    stroke-width: 1px !important;
+    transition: all 0.3s ease;
+    fill: #ffffff !important;
+    stroke: #94a3b8 !important;
+}
+
+.node:hover rect {
+    filter: brightness(0.9);
+    stroke-width: 2px !important;
+    cursor: pointer;
+}
+
+.status-done rect, .status-posted rect {
+    stroke: #16a34a !important;
+}
+
+.status-sale rect, .status-purchase rect, .status-assigned rect, .status-confirmed rect {
+    stroke: #2563eb !important;
+}
+
+.status-draft rect, .status-cancel rect {
+    stroke: #4b5563 !important;
+}
+
+.vrm-node {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 8px;
+    font-family: inherit;
+    line-height: 1.15;
+    align-items: center;
+    text-align: center;
+}
+
+.vrm-title {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.vrm-badge {
+    display: inline-block;
+    width: fit-content;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    border: 1px solid transparent;
+    margin: 0 auto;
+}
+
+.vrm-badge--neutral {
+    background: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+.vrm-badge--draft {
+    background: #f3f4f6;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.vrm-badge--progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border-color: #93c5fd;
+}
+
+.vrm-badge--done {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #86efac;
+}
+
+.vrm-badge--warning {
+    background: #fef3c7;
+    color: #b45309;
+    border-color: #fcd34d;
+}
+
+.vrm-badge--cancel {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+}
